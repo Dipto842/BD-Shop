@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { AuthConst } from "../../../Routs/firebase/Authpovadar/Authpovadar";
+
 import { useForm } from "react-hook-form"
-import img from '../../../assets/Illustration.png'
+
 
 import { Link } from "react-router-dom";
-import Sosallogin from "./Register/Sosallogin";
+
+import { Athcontes } from "../firebase/AthoProvadar/AthoProvadar";
 
 
 
@@ -17,11 +18,11 @@ const Logen = () => {
 
     formState: { errors },
   } = useForm()
-  const { logein } = useContext(AuthConst)
+  const { singup } = useContext(Athcontes)
 
   const onSubmit = (data) => {
     console.log(data)
-    logein(data.email, data.password)
+    singup(data.email, data.password)
       .then(res => {
         console.log(res), alert('ok')
         

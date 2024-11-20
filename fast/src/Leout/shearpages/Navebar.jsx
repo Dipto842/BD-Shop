@@ -44,8 +44,8 @@ const Nav = () => {
   );
 
   return (
-    <div className="lg:w-[1520px] fixed z-20  opacity-65 text-white ">
-      <div className="navbar">
+    <div className="lg:w-[1520px] fixed z-20   opacity-65 text-white ">
+      <div className="navbar lg:ml-[15.25rem]">
         <div className="navbar-start items-center">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
