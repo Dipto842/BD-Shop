@@ -8,35 +8,35 @@ const Nav = () => {
 
   const link = (
     <>
-      <div className="lg:flex gap-5  lg:mr-[189px] items-center">
+      <div className="lg:flex gap-5  lg:mr-[8px] items-center ">
         <Link>
-          <li>Home</li>
+          <li className="btn btn-outline text-white">Home</li>
         </Link>
         <Link>
-          <li>CONTACT</li>
+          <li className="btn btn-outline text-white">CONTACT</li>
         </Link>
         {  isAdmin && (
-          <li>
+          <li className="btn btn-outline text-white">
             <Link to={"/sidebar/AdminHome"}>DASHBOARD</Link>
           </li>
         )}
         { !isAdmin && (
-          <li>
+          <li className="btn btn-outline text-white">
             <Link to={"/sidebar/UserHome"}>DASHBOARD</Link>
           </li>
         )}
 
         <Link to={"/men"}>
-          <li>Our Men</li>
+          <li className="btn btn-outline text-white">Our Men</li>
         </Link>
         <Link to={"/our"}>
           {" "}
-          <li>Our Shop</li>
+          <li className="btn btn-outline text-white">Our Shop</li>
         </Link>
         {
           <Link to={"/login"}>
             {" "}
-            <li>Login</li>
+            <li className="btn btn-outline text-white">Login</li>
           </Link>
         }
       </div>
@@ -44,9 +44,9 @@ const Nav = () => {
   );
 
   return (
-    <div className="lg:w-[1520px] fixed z-20   opacity-65 text-white ">
+    <div className="lg:w-[1920px] fixed z-20 bg-zinc-700  opacity-65 text-white ">
       <div className="navbar lg:ml-[15.25rem]">
-        <div className="navbar-start items-center">
+        <div className=" items-center">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -72,11 +72,11 @@ const Nav = () => {
               
             </ul>
           </div>
-          <div>
-            <a className=" text-3xl itali "> bisto-bos</a>
+          <div className="">
+            <h1 className=" text-3xl itali "> <span className="text-red-400">BD</span><span className="text-amber-200">-</span><span className="text-sky-300">Shop</span></h1>
           </div>
         </div>
-        <div className="navbar-end hidden gap-6 lg:flex items-center ">
+        <div className="navbar-end hidden gap-6 lg:flex mr-56 ">
           <ul className="menu px-1 flex gap-7">{link}</ul>
         </div>
 

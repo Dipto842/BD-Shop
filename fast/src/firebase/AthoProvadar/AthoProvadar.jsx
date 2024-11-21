@@ -1,20 +1,21 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-
+import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 
-import auth from "../firebase";
+
+import app from "../firebase";
+import analytics from "../firebase";
 
 export const Athcontes = createContext('')
 const AthoProvadar = ({ children }) => {
+    
     const Googleprovider = new GoogleAuthProvider();
     const [Loding, setloding] = useState(true)
     const [user, setuser] = useState([])
-  
+    const auth = getAuth(app);
     const singup = (email, password, name) => {
-
-        return createUserWithEmailAndPassword(auth, email, password, name)
-
+     return createUserWithEmailAndPassword(auth, email, password, name)
     }
     const singin = (email, password) => {
 
@@ -42,7 +43,7 @@ const AthoProvadar = ({ children }) => {
         return () => {
             chens()
         }
-    }, [])
+    }, [auth])
 
     const athuinfo = {
         user,
