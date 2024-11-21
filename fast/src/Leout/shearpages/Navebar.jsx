@@ -12,8 +12,8 @@ const Nav = () => {
         <Link>
           <li className="btn btn-outline text-white">Home</li>
         </Link>
-        <Link>
-          <li className="btn btn-outline text-white">CONTACT</li>
+        <Link to={'/Products'}>
+          <li className="btn btn-outline text-white">Products</li>
         </Link>
         {  isAdmin && (
           <li className="btn btn-outline text-white">
@@ -27,7 +27,7 @@ const Nav = () => {
         )}
 
         <Link to={"/men"}>
-          <li className="btn btn-outline text-white">Our Men</li>
+        <li className="btn btn-outline text-white">CONTACT</li>
         </Link>
         <Link to={"/our"}>
           {" "}
@@ -136,21 +136,17 @@ const Nav = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            <div className="w-10 rounded-full">
+            <div className="w-10 rounded-full ">
               <img alt="Tailwind CSS Navbar component" src='' />
             </div>
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 text-stone-900 rounded-box w-52"
           >
+           
             <li>
-              <a className="justify-between text-orange-500">
-                <span className="badge"></span>
-              </a>
-            </li>
-            <li>
-              <a>Settings</a>
+              <a> profile</a>
             </li>
             <li>
               <a>Logout</a>

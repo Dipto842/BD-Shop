@@ -6,6 +6,8 @@ import Mani from "../../Mani";
 import Home from "../../Componetn/Home/Home";
 import Logen from "../../LogenInfho/Login";
 import Sign from "../../LogenInfho/rejestar";
+import Products from "../../Leout/Products/Products";
+import ProductsData from "../../Leout/Products/ProductsData/ProductsData";
 
 export const router = createBrowserRouter([
     {
@@ -15,13 +17,32 @@ export const router = createBrowserRouter([
        {
         path:'/',
         element:<Home></Home>
-       },
-    
-  
+       }
   
       ]
 
     },
+
+{
+  
+    path:'/Products',
+    element:<Products></Products>,
+    children:[
+      {
+        path:'/Products',
+        element:<ProductsData></ProductsData>
+      }
+    ]
+},
+
+
+
+
+
+
+
+
+
   {
     
       path:'/login',

@@ -7,6 +7,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import app from "../firebase";
 import analytics from "../firebase";
 
+
 export const Athcontes = createContext('')
 const AthoProvadar = ({ children }) => {
     
@@ -39,6 +40,9 @@ const AthoProvadar = ({ children }) => {
     useEffect(() => {
         const chens = onAuthStateChanged(auth, currentUser => {
           setuser(currentUser)
+
+       
+
         })
         return () => {
             chens()

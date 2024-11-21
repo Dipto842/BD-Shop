@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Athcontes } from "../firebase/AthoProvadar/AthoProvadar";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Sign = () => {
   const neveget = useNavigate();
@@ -51,14 +52,22 @@ const Sign = () => {
           const userInpho = {
             name: data.name,
             email: data.email,
+            type: data.type,
+            Wishlist: {},
           };
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "your register success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+
+          axios
+            .post("https://fastsarvar.vercel.app/userInfho", userInpho)
+            .then(() => {
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "your register success",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            });
+
           neveget("/");
         })
         .catch((e) => {
@@ -66,7 +75,7 @@ const Sign = () => {
         });
     });
 
-    console.log(data);
+    console.log(data.type);
   };
 
   return (
@@ -128,9 +137,12 @@ const Sign = () => {
                     Forgot password?
                   </a>
                 </label>
-                <select className="select select-bordered w-full mb-2 mt-4 "  >
+                <select
+                  className="select select-bordered w-full mb-2 mt-4 "
+                  {...register("type")}
+                >
                   <option disabled selected>
-                  users  types 
+                    users types
                   </option>
                   <option>Buyer</option>
                   <option>Seller</option>
